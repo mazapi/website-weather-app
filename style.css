@@ -1,0 +1,410 @@
+
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            text-decoration: none;
+            list-style: none;
+        }
+
+
+        :root{
+            --main-clr:rgb(17, 216, 67);
+            --text-clr:#fff;
+        }
+
+        a {
+            color: rgb(31, 31, 31);
+        }
+
+        body {
+            background: #fbfffb;
+            height: 100vh;
+        }
+
+        header {
+            background-color: var(--main-clr);;
+            color: rgb(253, 253, 253);
+            padding: 20px 90px;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0px 1px 2rem rgba(0, 0, 0, 0.1);
+            position: fixed;
+            left: 0;
+            z-index: 1000;
+            right: 0;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            margin-top: 5px;
+            border-radius: 8px;
+            width: 20px;
+            height: 2px;
+            background-color: #020814;
+            transition: all .3s ease-in-out;
+        }
+
+        nav {
+            display: flex;  
+            gap: 55px;
+            padding: 0 10px;
+            position: relative;
+            text-align: center;
+            align-items: center;
+            
+        }
+
+        nav a::before {
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            content: '';
+            width: 0;
+            height: 2px;
+            background-color: #f0f8ff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        nav a {
+            color: var(--text-clr);
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+        }
+
+        
+
+
+        section#current{
+            color: #f0f8ff;
+        }
+
+
+
+
+        
+
+     
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+           
+            
+           
+            header{
+                padding: 20px 20px;
+                position: relative;
+            }
+            nav {
+                flex-direction: column;
+                display: none;
+                position: absolute;
+                right: 0;
+                top:57px;
+                height: 100vh;
+                background-color: #020814;
+                transition: all .3s ease;
+                width: 50%;
+                justify-content: center;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 10px 0;
+                color: #f0f8ff;
+            }
+
+            .burger {
+                display: block;
+            }
+        }
+
+        section {
+            padding: 40px;
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #020814;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            margin-top: 3rem;
+            width: 100%;
+            box-shadow:  0px 1px 3rem rgba(0, 0, 0, 0.178);
+            bottom: 0;
+        }
+
+        .logo {
+            flex-direction: column;
+            display: flex;
+        }
+
+        .logo img {
+            width: 150px;
+        }
+
+        section.home {
+            background-size: cover;
+            height: 90vh;
+            background-position: center;
+         background-color: var(--main-clr);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+       footer a:hover{
+            color: rgb(46, 35, 197);
+            text-decoration: underline;
+            transition: all .3s ease-in-out;
+        }
+
+        
+
+        section.home button {
+            padding: 1rem;
+            outline: none;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            background-color: #0fca1e;
+        }
+
+        section.home h2 {
+            font-size: 3rem;
+        }
+
+        section.home input {
+            backdrop-filter: blur(8px);
+            background-color: #fcfcfc11;
+            outline: none;
+            border: 1px solid white;
+            color: white;
+            padding: 1rem;
+            width: 400px;
+            border-radius: 30px;
+        }
+
+        .weather-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            margin: 20px auto;
+            text-align: center;
+            color: white;
+        }
+
+        .weather-box h3 {
+            font-size: 2rem;
+        }
+
+        .weather-box img {
+            margin: 10px 0;
+        }
+
+        .weather-box p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .search-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .search-box input {
+            padding: 10px;
+            width: 200px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 30px;
+            background-color: #08b35d;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Ensure section #current does not overlap and has specific height */
+        section#current {
+            height: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-image 0.5s ease-in-out;
+            min-height: 100vh;
+            margin-bottom: 2rem;
+            background-size: cover;
+            background-position: center;
+            background-image: linear-gradient(rgba(15, 8, 77, 0.336),rgba(29, 3, 59, 0.432));
+            
+        }
+
+        /* Additional info styles */
+        .weather-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .weather-info .info-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .info-box img {
+            width: 40px;
+            height: 40px;
+        }
+
+        a#toggle-temp{
+            background-color: #08b35d;
+            padding: 0.9rem;
+        }
+
+        .logo span{
+            color: rgb(46, 10, 179);
+        }
+
+
+        /* Ensure better spacing and sizing for small screens */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 10px;
+        position: relative;
+    }
+
+    nav {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        right: 0;
+        top:57px;
+        height: 100vh;
+        background-color: #020814;
+        width: 100%;
+    }
+
+    nav a {
+        margin: 20px 0;
+        font-size: 18px;
+    }
+
+    section.home {
+    
+       height: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    section.home h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    section.home input {
+        width: 250px;
+        margin-bottom: 1rem;
+    }
+
+    .search-box {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    section#current {
+        padding: 20px 10px;
+        
+        background-size: cover;
+    }
+
+    .weather-box {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .weather-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box {
+        margin-bottom: 20px;
+    }
+
+    .info-box img {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+
+
+    /* Fixing icon visibility */
+.info-box img {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Input box and button spacing */
+.search-box input, .search-box button {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+}
+
+.search-box button {
+    background-color: #47d823;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+}
+
+
